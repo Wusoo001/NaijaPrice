@@ -16,7 +16,7 @@ dotenv.config();
 app.use(express.json());
 app.use(cors());
 app.use("/api", protectedRoute);
-app.use("/api/Products", productRoutes);
+app.use("/api/products", productRoutes);
 app.use('/api/prices', priceRoutes);
 app.use("/api/admin", adminAuthRoutes);
 
@@ -39,4 +39,4 @@ app.get("/api/dashboard", verifyToken, (req, res) => {
 });
 
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`), "0.0.0.0");
